@@ -1,4 +1,17 @@
-import { defineStore } from 'pinia'
+import { defineStore, getActivePinia } from 'pinia'
+
+// Development-time safety check: helps diagnose plugin/registration issues during SSR or tests.
+// Does not throw in production; only warns in dev if a store is imported before Pinia is installed.
+if (process.env.NODE_ENV !== 'production') {
+  try {
+    if (!getActivePinia()) {
+      // eslint-disable-next-line no-console
+      console.warn('[notes] Pinia is not active yet. Ensure plugins/pinia.ts installs Pinia before store usage.')
+    }
+  } catch {
+    // ignore if getActivePinia is unavailable in some build contexts
+  }
+}
 
 export type Note = {
   id: string
