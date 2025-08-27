@@ -1,75 +1,41 @@
-# Nuxt Minimal Starter
+# Notes Frontend (Nuxt 3)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Minimalistic light-theme notes application with:
+- User authentication (mock, localStorage)
+- Create, read, update, delete notes
+- Organize by folders and tags
+- Search and filter (starred, recent, archived)
+- Responsive layout with header, sidebar, and main content
+
+Colors:
+- Primary: #1976d2
+- Secondary: #424242
+- Accent: #ffca28
 
 ## Setup
 
-Make sure to install dependencies:
-
+Install dependencies:
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Development
 
-Start the development server on `http://localhost:3000`:
-
+Start dev server at http://localhost:3000
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
 ## Production
 
-Build the application for production:
-
+Build and preview:
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Notes
+
+- Authentication is mocked; any email/password combination logs in.
+- Data is stored in localStorage (`notes_data_v1`). Clearing browser storage resets data.
+- Pinia is used for state management.
